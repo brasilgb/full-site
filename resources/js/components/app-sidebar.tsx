@@ -1,5 +1,5 @@
 import { Link } from '@inertiajs/react';
-import { BookOpen, FolderGit2, LayoutGrid } from 'lucide-react';
+import { ContactIcon, FactoryIcon, FolderGit2, ImagesIcon, LayoutGrid, LayoutPanelTopIcon, MegaphoneIcon, MonitorSmartphoneIcon, SlidersHorizontalIcon, UserIcon, WrenchIcon } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
@@ -16,11 +16,62 @@ import {
 import { dashboard } from '@/routes';
 import type { NavItem } from '@/types';
 
-const mainNavItems: NavItem[] = [
+const primaryNavItems: NavItem[] = [
     {
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
+    },
+    {
+        title: 'Fabricantes',
+        href: dashboard(),
+        icon: FactoryIcon,
+    },
+    {
+        title: 'Categorias',
+        href: dashboard(),
+        icon: LayoutPanelTopIcon,
+    },
+    {
+        title: 'Produtos',
+        href: dashboard(),
+        icon: MonitorSmartphoneIcon,
+    },
+    {
+        title: 'Serviços',
+        href: dashboard(),
+        icon: WrenchIcon,
+    },
+    {
+        title: 'Sliders',
+        href: dashboard(),
+        icon: ImagesIcon,
+    },
+];
+
+const secundaryNavItems: NavItem[] = [
+    {
+        title: 'Sobre',
+        href: dashboard(),
+        icon: MegaphoneIcon,
+    },
+    {
+        title: 'Contato',
+        href: dashboard(),
+        icon: ContactIcon,
+    },
+];
+
+const terciaryNavItems: NavItem[] = [
+    {
+        title: 'Ajustes',
+        href: dashboard(),
+        icon: SlidersHorizontalIcon,
+    },
+    {
+        title: 'Usuários',
+        href: dashboard(),
+        icon: UserIcon,
     },
 ];
 
@@ -29,12 +80,7 @@ const footerNavItems: NavItem[] = [
         title: 'Repository',
         href: 'https://github.com/laravel/react-starter-kit',
         icon: FolderGit2,
-    },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#react',
-        icon: BookOpen,
-    },
+    }
 ];
 
 export function AppSidebar() {
@@ -52,8 +98,10 @@ export function AppSidebar() {
                 </SidebarMenu>
             </SidebarHeader>
 
-            <SidebarContent>
-                <NavMain items={mainNavItems} />
+            <SidebarContent className='gap-4'>
+                <NavMain items={primaryNavItems} label='' />
+                <NavMain items={secundaryNavItems} label="Páginas" />
+                <NavMain items={terciaryNavItems} label="Configurações" />
             </SidebarContent>
 
             <SidebarFooter>
