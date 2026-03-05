@@ -1,9 +1,8 @@
 import { Link } from '@inertiajs/react';
-import { ContactIcon, FactoryIcon, FolderGit2, ImagesIcon, LayoutGrid, LayoutPanelTopIcon, MegaphoneIcon, MonitorSmartphoneIcon, SlidersHorizontalIcon, UserIcon, WrenchIcon } from 'lucide-react';
+import { ContactIcon, FactoryIcon, FolderGit2, ImagesIcon, InfoIcon, LayoutGrid, LayoutPanelTopIcon, MonitorSmartphoneIcon, SlidersHorizontalIcon, UserIcon, WrenchIcon } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
-import { NavUser } from '@/components/nav-user';
 import {
     Sidebar,
     SidebarContent,
@@ -13,7 +12,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
+import { about, category, dashboard, manufacturer, product, service, setting, slider, user } from '@/routes';
 import type { NavItem } from '@/types';
 
 const primaryNavItems: NavItem[] = [
@@ -23,28 +22,28 @@ const primaryNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
     {
-        title: 'Fabricantes',
-        href: dashboard(),
-        icon: FactoryIcon,
-    },
-    {
         title: 'Categorias',
-        href: dashboard(),
+        href: category(),
         icon: LayoutPanelTopIcon,
     },
     {
+        title: 'Fabricantes',
+        href: manufacturer(),
+        icon: FactoryIcon,
+    },
+    {
         title: 'Produtos',
-        href: dashboard(),
+        href: product(),
         icon: MonitorSmartphoneIcon,
     },
     {
         title: 'Serviços',
-        href: dashboard(),
+        href: service(),
         icon: WrenchIcon,
     },
     {
         title: 'Sliders',
-        href: dashboard(),
+        href: slider(),
         icon: ImagesIcon,
     },
 ];
@@ -52,25 +51,20 @@ const primaryNavItems: NavItem[] = [
 const secundaryNavItems: NavItem[] = [
     {
         title: 'Sobre',
-        href: dashboard(),
-        icon: MegaphoneIcon,
-    },
-    {
-        title: 'Contato',
-        href: dashboard(),
-        icon: ContactIcon,
+        href: about(),
+        icon: InfoIcon,
     },
 ];
 
 const terciaryNavItems: NavItem[] = [
     {
-        title: 'Ajustes',
-        href: dashboard(),
+        title: 'Configurações',
+        href: setting(),
         icon: SlidersHorizontalIcon,
     },
     {
         title: 'Usuários',
-        href: dashboard(),
+        href: user(),
         icon: UserIcon,
     },
 ];
@@ -106,7 +100,6 @@ export function AppSidebar() {
 
             <SidebarFooter>
                 <NavFooter items={footerNavItems} className="mt-auto" />
-                <NavUser />
             </SidebarFooter>
         </Sidebar>
     );

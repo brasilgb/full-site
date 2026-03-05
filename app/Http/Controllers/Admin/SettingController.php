@@ -10,6 +10,6 @@ class SettingController extends Controller
 {
     public function index()
     {
-        return Inertia::render('admin/settings/index');
+        return Inertia::render('admin/setting/index');
     }
 }

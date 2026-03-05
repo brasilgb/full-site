@@ -1,22 +1,22 @@
 import AppLayout from '@/layouts/app-layout'
-import { about } from '@/routes';
+import { user } from '@/routes';
 import { BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react'
-import { InfoIcon } from 'lucide-react';
+import { UserIcon } from 'lucide-react';
 
 const breadcrumbs: BreadcrumbItem[] = [
   {
     title: '',
-    href: about(),
+    href: user(),
   },
 ];
-function About() {
+function User() {
 
-  const AbautHeader = () => {
+  const UserHeader = () => {
     return (
       <div className='flex items-center gap-2'>
-        <InfoIcon className='w-8 h-8' />
-        <h1 className='text-2xl font-medium'>Sobre</h1>
+        <UserIcon className='w-8 h-8' />
+        <h1 className='text-2xl font-medium'>Usuários</h1>
       </div>
     )
   }
@@ -24,12 +24,12 @@ function About() {
   return (
     <AppLayout
       breadcrumbs={breadcrumbs}
-      headerTitle={<AbautHeader />}
+      headerTitle={<UserHeader />}
     >
       <Head title="Sobre" />
-      <div>About</div>
+      <div>User</div>
     </AppLayout>
   )
 }
 
-export default About
+export default User
