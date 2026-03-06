@@ -12,8 +12,9 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { about, category, dashboard, manufacturer, product, service, setting, slider, user } from '@/routes';
+import { about, dashboard, manufacturer, product, service, setting, slider, user } from '@/routes';
 import type { NavItem } from '@/types';
+import category from '@/routes/category';
 
 const primaryNavItems: NavItem[] = [
     {
@@ -23,7 +24,7 @@ const primaryNavItems: NavItem[] = [
     },
     {
         title: 'Categorias',
-        href: category(),
+        href: category.index(),
         icon: LayoutPanelTopIcon,
     },
     {

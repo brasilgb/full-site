@@ -18,7 +18,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('about', [AboutController::class, 'index'])->name('about');
-    Route::get('category', [CategoryController::class, 'index'])->name('category');
+    Route::resource('category', CategoryController::class);
     Route::get('manufacturer', [ManufacturerController::class, 'index'])->name('manufacturer');
     Route::get('product', [ProductController::class, 'index'])->name('product');
     Route::get('service', [ServiceController::class, 'index'])->name('service');
