@@ -4,6 +4,7 @@ import CategoryHeader from './header'
 import { Head, Link } from '@inertiajs/react';
 import { BreadcrumbItem } from '@/types';
 import category from '@/routes/category';
+import FormCategory from './form-category';
 
 const breadcrumbs: BreadcrumbItem[] = [
   {
@@ -26,6 +27,8 @@ function EditCategory({ page, search }: any) {
       <Link href={category.index({ query: { page: page, search: search  } })}>
         Voltar
       </Link>
+
+      <FormCategory />
     </AppLayout>
   )
 }

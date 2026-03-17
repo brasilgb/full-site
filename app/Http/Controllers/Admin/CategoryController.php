@@ -60,7 +60,6 @@ class CategoryController extends Controller
      */
     public function edit(Category $category, Request $request)
     {
-        $page = $request->page;
         return Redirect::route('category.show', ['category' => $category->id, 'page' => $request->page, 'search' => $request->search]);
     }
 

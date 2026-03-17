@@ -1,4 +1,4 @@
-export type CategoryProps = {
+export type ICategory = {
     id: number;
     category_id: number;
     name: string;
@@ -17,4 +17,9 @@ export type CategoryProps = {
 export type CategoryFilters = {
   page?: string
   search?: string
+}
+
+export interface OptionType {
+    value: string;
+    label: string;
 }

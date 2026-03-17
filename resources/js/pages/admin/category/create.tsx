@@ -4,6 +4,7 @@ import CategoryHeader from './header'
 import { Head } from '@inertiajs/react';
 import { BreadcrumbItem } from '@/types';
 import category from '@/routes/category';
+import FormCategory from './form-category';
 
 const breadcrumbs: BreadcrumbItem[] = [
   {
@@ -23,7 +24,7 @@ function CreateCategory() {
       headerTitle={<CategoryHeader />}
     >
       <Head title="Nova Categoria" />
-
+<FormCategory />
       </AppLayout>
   )
 }

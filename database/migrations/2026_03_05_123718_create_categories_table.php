@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->nullable()->references('id')->on('categories');
-            $table->string('name');
-            $table->string('slug');
+            $table->foreignId('category_id')->nullable()->references('id')->on('categories'); // react select
+            $table->string('name'); // 
+            $table->string('slug'); // slug automático 
             $table->text('description')->nullable();
-            $table->text('thumbnail')->nullable();
-            $table->string('featured')->nullable();
-            $table->string('type')->nullable();
-            $table->integer('active');
-            $table->integer('visiblehome');
+            $table->text('thumbnail')->nullable(); // Miniaturas de imagem
+            $table->string('featured')->nullable(); // Imagem destaque
+            $table->string('type')->nullable(); // Produtos, serviços, etc..., usar select
+            $table->integer('active'); // categoria ativa, usar switch
+            $table->integer('visiblehome'); // usar switch
             $table->timestamps();
         });
     }
